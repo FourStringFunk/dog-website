@@ -10,6 +10,8 @@
     --header: #3c9ecc;
     --accent: #ffdc3b;
     --button: #ff6f68;
+    --button-hover: #fd5b53;
+    --alt-text: #5a5a5a;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
@@ -22,12 +24,42 @@ div, ul, ol, li, p, a, button {
     font-family: Helvetica, sans-serif;
 }
 
+h3 {
+    font-size: 38px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
 header {
     height: 8vh;
+    background-color: var(--header) !important;
 }
 
 section {
     height: 75vh;
+}
+
+footer {
+    height: 8vh !important;
+}
+
+footer p {
+    margin: 0;
+}
+
+.btn {
+    padding: 10px 25px;
+    background-color: var(--button);
+    border: 0px;
+}
+
+.btn:hover {
+    background-color: var(--button-hover);
 }
 
 /*  NAVIGATION */
@@ -73,4 +105,21 @@ nav a:active {
 
 /* JAVY STYLES */
 
-/* CHRIS STYLES*/
+/* CHRIS STYLES */
+
+#breedSelect {
+    list-style-type: none;
+}
+
+.breed {
+    text-decoration: none;
+    margin: 15px;
+    padding: 15px;
+    background-color: var(--button);
+    color: var(--main-bg-color);
+    border-radius: 5px;
+}
+
+.breed:hover {
+    background-color: var(--button-hover);
+}

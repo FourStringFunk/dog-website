@@ -1,94 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- INSERT BOOTSTRAP HERE -->
-  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
-  <title>Breed Information</title>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pupper Picker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <script src="assets/js/script.js" defer="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+    crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
-  <header>Logo</header>
-  <nav>
-    <ul>
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="./dog-breeds.html">Breed Info</a></li>
-      <li><a href="./adopting-page.html">Adopt</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav class="navbar navbar-exapnd-lg h-100 bg-light" id="nav">
+      <div class="container-fluid">
+        <a  class="navbar-brand" href="index.html" width="30" height="24" class="d-inline-block align-text-top" data-bs-target="#navbarSupportedContent" ari>
+          <img src="" alt="Pupper Picker">
+        </a>
 
-  <section> <!-- HERO IMAGE -->
-    <img src="" alt="" height="400px" width="1080px">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 float-end">
+            <li class="nav-item">
+              <a href="pages/dog-breeds.html">Breed Info</a>
+            </li>
+            <li class="nav-item">
+              <a href="pages/dog-search.html">Search</a>
+            </li>
+            <li class="nav-item">
+              <a href="pages/adopting-page.html">Adopt</a>
+            </li>
+      </div>
+    </nav>
+  </header>
+
+  <section class="h-50"> <!-- HERO IMAGE -->
+    <img src="" alt="" height="400px" width="1080px" class="image-fluid w-100">
   </section>
 
-  <section> <!-- DOG BREED SELECTION -->
+  <section class="section d-flex flex-column justify-content-center align-items-center bg-light"> <!-- DOG BREED SELECTION -->
+    <h2>Select Your Breed</h2>
     <div>
-        <h2>Select Your Breed</h2>
-        <ul>
-            <li>Golden Retriever</li>
-            <li>German Shephard</li>
-            <li>Labrador Retriever</li>
-            <li>Great Dane</li>
-            <li>Chihuahua</li>
-        </ul>
+        <ul class="d-flex flex-wrap justify-content-center align-content-center" id="breedSelect"></ul>
     </div>
   </section> 
 
-  <section> <!-- DOG STATS -->
-    <div> <!-- BREED CONTAINER-->
-        <div> <!-- BREED OVERVIEW -->
-            <div> <!-- BREED IMAGE-->
+  <section class="d-flex flex-column justify-content-center align-items-center"> <!-- DOG STATS -->
+    <h2>Breed Name</h2>
+    <p class="w-75">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 
-            </div> <!-- BREED DESCRIPTION -->
-
-            <div>
-                <h2>Breed Name</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            </div>   
-        </div>
-
-        <div> <!-- BREED STATS -->
-            <ul>
-                <li>
-                  <span><h4>Trainability</h4></span>
-                  <span>INSERT VALUE</span>
-                </li>
-                <li>
-                    <span><h4>Playful</h4></span>
-                    <span>INSERT VALUE</span>
-                </li>
-                <li>
-                    <span><h4>Protective</h4></span>
-                    <span>INSERT VALUE</span>
-                </li>
-                <li>
-                    <span><h4>Life Expectancy</h4></span>
-                    <span>INSERT VALUE</span>
-                </li>
-                <li>
-                    <span><h4>Male Height</h4></span></li>
-                    <span>INSERT VALUE</span>
-                </li>
-                <li>
-                    <span><h4>Male Weight</h4></span>
-                    <span>INSERT VALUE</span>
-                </li>
-                <li>
-                    <span><h4>Female Height</h4></span>
-                    <span>INSERT VALUE</span>
-                </li>
-                <li>
-                    <span><h4>Female Weight</h4></span>
-                    <span>INSERT VALUE</span>
-                </li>
-            </ul>
-        </div>
+    <div> <!-- BREED STATS -->
+        <ul>
+            <li>
+              <span><h4>Trainability</h4></span>
+                <span>INSERT VALUE</span>
+            </li>
+            <li>
+                <span><h4>Playful</h4></span>
+                <span>INSERT VALUE</span>
+            </li>
+            <li>
+                <span><h4>Protective</h4></span>
+                <span>INSERT VALUE</span>
+            </li>
+            <li>
+                <span><h4>Life Expectancy</h4></span>
+                <span>INSERT VALUE</span>
+            </li>
+            <li>
+                <span><h4>Male Height</h4></span></li>
+                <span>INSERT VALUE</span>
+            </li>
+        
+        </ul>
     </div>
   </section>
 
-  <section> <!-- DOG FACTS -->
+  <section class="section d-flex flex-column justify-content-center align-items-center bg-light"> <!-- DOG FACTS -->
     <h3>Fun Facts About Dogs</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </section>
