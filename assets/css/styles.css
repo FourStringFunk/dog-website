@@ -1,4 +1,73 @@
 /* UNIVERSAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-bg-color: #fff;
+    --alt-bg-color: #f0f0f0;
+    --header: #3c9ecc;
+    --accent: #ffdc3b;
+    --button: #ff6f68;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lobster", serif;
+}
+
+div, ul, ol, li, p, a, button {
+    font-family: Helvetica, sans-serif;
+}
+
+header {
+    height: 8vh;
+}
+
+section {
+    height: 75vh;
+}
+
+/*  NAVIGATION */
+/*
+header {
+    background-color: var(--header);
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw;
+}
+
+nav {
+    width: 40vw;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    width: 30%;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--main-bg-color);
+}
+
+nav a:hover {
+   color: var(--accent) ;
+}
+
+nav a:active {
+    color: var(--button);
+} */
 
 /* REN STYLES */
 
