@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+section {
+  height: auto;
+  margin: auto;
+  padding: 10px 25px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.features li {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.images > * {
+  margin: 10px 25px;
+}
+
+.contact {
+  background-color: lightgrey;
+}
+
+.social li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
