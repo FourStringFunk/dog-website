@@ -63,7 +63,12 @@ footer p {
 }
 
 /*  NAVIGATION */
+
+.nav-item {
+  margin-left: 20px;
+}
 /*
+
 header {
     background-color: var(--header);
     display: flex;
