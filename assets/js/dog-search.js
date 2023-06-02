@@ -27,26 +27,23 @@ $(function() {
         .then(function(d) {
           console.log(d);
           dataArray = d;
-          console.log(dataArray.animals.length);
           for (var i = 0; i < dataArray.animals.length; i++ ) {
             var clone = node.cloneNode(true);
             document.getElementById("card-container").appendChild(clone); // used for creating multiple cards and filling the card container
           }
-          console.log(length);
           for (var i = 0; i < dataArray.animals.length; i++ ) {
 
             nameEl[i].innerText = dataArray.animals[i].name; // appends the data to the cards. 
             ageEl[i].innerText = dataArray.animals[i].age +" | "+ dataArray.animals[i].breeds.primary;
             aboutEl[i].innerText = dataArray.animals[i].description;
             if (dataArray.animals[i].photos.length !== 0) {
-              imgEl[i].src=dataArray.animals[i].photos[0].full;
+              imgEl[i].src=dataArray.animals[i].photos[0].medium;
             }
             btnEl[i].setAttribute("id", dataArray.animals[i].id); // calls button with the id, which directs to adopt dogs.
           }
           document.getElementById("card-container").lastElementChild.setAttribute("class", "d-none"); // removes the last child template 
         })
    });
-
   
 });
 function toPageAdopt(element){
