@@ -2,9 +2,11 @@
   box-sizing: border-box;
 }
 
+main {
+  height: auto;
+}
 section {
   height: auto;
-  margin: auto;
   padding: 10px 25px;
 }
 
@@ -30,5 +32,13 @@ ul {
 #social-media li {
   display: inline-block;
   margin: 0 10px;
+}
+
+main section {
+  border: 2px #ffdc3b solid;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 2rem 0;
 }
 
