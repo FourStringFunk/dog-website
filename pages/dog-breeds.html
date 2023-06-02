@@ -10,11 +10,6 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/reset.css">
-    <script src="assets/js/script.js" defer="true"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
-    crossorigin="anonymous">
-    </script>
 </head>
 
 <body>
@@ -48,54 +43,51 @@
     <img src="" alt="" height="400px" width="1080px" class="image-fluid w-100">
   </section>
 
-  <section class="section d-flex flex-column justify-content-center align-items-center bg-light"> <!-- DOG BREED SELECTION -->
+  <section class="breedSelectSection section d-flex flex-column justify-content-center align-items-center bg-light" id="breedSelectSection"> <!-- DOG BREED SELECTION -->
     <h2>Select Your Breed</h2>
     <div>
-        <ul class="d-flex flex-wrap justify-content-center align-content-center" id="breedSelect"></ul>
+        <ul class="d-flex flex-wrap justify-content-center align-content-center" id="breedSelection">
+        </ul>
     </div>
   </section> 
 
-  <section class="d-flex flex-column justify-content-center align-items-center"> <!-- DOG STATS -->
-    <h2>Breed Name</h2>
+  <section class="d-flex flex-column justify-content-center align-items-center" id="breedInfoSection"> <!-- DOG STATS -->
+    <h2 id="breedName">Breed Name</h2>
     <p class="w-75">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 
-    <div> <!-- BREED STATS -->
-        <ul>
-            <li>
-              <span><h4>Trainability</h4></span>
-                <span>INSERT VALUE</span>
-            </li>
-            <li>
-                <span><h4>Playful</h4></span>
-                <span>INSERT VALUE</span>
-            </li>
-            <li>
-                <span><h4>Protective</h4></span>
-                <span>INSERT VALUE</span>
-            </li>
-            <li>
-                <span><h4>Life Expectancy</h4></span>
-                <span>INSERT VALUE</span>
-            </li>
-            <li>
-                <span><h4>Male Height</h4></span></li>
-                <span>INSERT VALUE</span>
-            </li>
-        
-        </ul>
+    <div class="card" style="width: 18rem;">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" id="minL">Minimum Lifespan</li>
+        <li class="list-group-item" id="maxL">Maximum Lifespan</li>
+        <li class="list-group-item" id="shedding">Shedding</li>
+        <li class="list-group-item" id="barking">Barking</li>
+        <li class="list-group-item" id="energy">Energy</li>
+        <li class="list-group-item" id="protectiveness">Protectiveness</li>
+        <li class="list-group-item" id="trainability">Trainability</li>
+      </ul>
     </div>
-  </section>
+
+    <div class="d-flex flex-column justify-content-center align-items-center my-5">
+      <h4>Scale Information</h4>
+      <p>Possible values between the range of 1 and 5, where 1 indicates the low end of the range and 5 indicates the maximum end of the range.</p>
+    </div>
+    </section>
 
   <section class="section d-flex flex-column justify-content-center align-items-center bg-light"> <!-- DOG FACTS -->
     <h3>Fun Facts About Dogs</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p id="fact"></p>
   </section>
 
   <footer>
 
   </footer>
 
-  <script src="/assets/js/script.js"></script>
-  <script src="/assets/js/dog-breeds.js"></script>
+  <script src="/assets/js/script.js" defer="true"></script>
+  <script src="/assets/js/dog-breeds.js" defer="true"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+    crossorigin="anonymous">
+  </script>
+
 </body>
 </html>
