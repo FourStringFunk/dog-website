@@ -1,8 +1,18 @@
 const savedId = localStorage.getItem("saved-id");
 let n = document.getElementsByClassName("name");
+let stat = document.getElementById("status");
 let age = document.getElementById("age");
+let gender = document.getElementById("gender");
 let breed = document.getElementById("breed");
+let coat = document.getElementById("coat");
+let primary = document.getElementById("primary-color");
+let secondary = document.getElementById("secondary-color");
+let tertiary = document.getElementById("tertiary-color");
 let description = document.getElementById("description");
+let childrenSafe = document.getElementById("children");
+let catSafe = document.getElementById("cats");
+let dogSafe = document.getElementById("dogs");
+let tags = document.getElementById("tags");
 let spayedNeutered = document.getElementById("spayed-neutered");
 let houseTrained = document.getElementById("house-trained");
 let specialNeeds = document.getElementById("special-needs");
@@ -69,7 +79,18 @@ $(function() {
 
           evalText(d.animal.name, n[0]);
           evalText(d.animal.name, n[1]);
+          evalText(d.animal.status, stat);
           evalText(d.animal.age, age);
+          evalText(d.animal.gender, gender);
+          //evalText(d.animal.coat, coat);
+          evalText(d.animal.colors.primary, primary);
+          evalText(d.animal.colors.secondary, secondary);
+          evalText(d.animal.colors.tertiary, tertiary);
+          yesOrNo(d.animal.environment.cats, catSafe);
+          yesOrNo(d.animal.environment.children, childrenSafe);
+          yesOrNo(d.animal.environment.dogs, dogSafe);
+          setTags(d.animal.tags, tags);
+
 
           if(d.animal.breeds.primary !== null && d.animal.breeds.secondary !== null)
             breed.innerText = d.animal.breeds.primary + " and " + d.animal.breeds.secondary;
@@ -95,17 +116,34 @@ $(function() {
             let imgEl = document.createElement("img");
             imgEl.setAttribute("src", d.animal.photos[i].large);
             images.appendChild(imgEl);
-            console.log(d.animal.photos.length);
           }
         })
     });
 });
+
+function yesOrNo(data, element) {
+  if(data !== null)
+    if(data === true)
+      element.innerText = "Yes";
+    else
+      element.innerText = "No";
+  else
+    element.innerText = "Unknown";
+}
 
 function evalText(data, element) {
   if(data === null)
     element.setAttribute("class", "d-none"); 
   else
     element.innerText = data;
+}
+
+function setTags(data, element) {
+  for (let i = 0; i < data.length; i++) {
+    let listEl = document.createElement("li");
+    listEl.innerText = data[i];
+    element.appendChild(listEl);
+  }
 }
 
 function setHref(data, element, additives) {
@@ -131,7 +169,6 @@ function setMapsUrl(data, element) {
 }
 
 function setBusinessHours(data, element) {
-  console.log(data.monday);
   if(data.sunday !== null || 
     data.monday !== null || 
     data.tuesday !== null || 
@@ -149,12 +186,10 @@ function setBusinessHours(data, element) {
     }
   else {
     element.parentElement.setAttribute("class", "d-none");
-    console.log("Business hours incomplete");
   }
 }
 
 function setSocialMedia(data, element) {
-  let child = element.children;
   if(data.facebook !== null)
     element.children[0].children[0].setAttribute("href", data.facebook);
 
