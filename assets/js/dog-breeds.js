@@ -20,6 +20,8 @@ var breedBtn = document.querySelectorAll('.breed');
 var breedSelectionList = [];
 var breedAttributes = []; // blank array for breed attributes by breed
 
+console.log("hello");
+
 // Buttons
 fetch(request, {
     method: 'GET',
@@ -50,15 +52,15 @@ fetch(request, {
         trainability.textContent = "Trainability: " + data[i].trainability;
     }
 
-    function saveBreedAttributes {
+    function saveBreedAttributes() {
 
     }
 
-    function initData {
+    function initData() {
 
     }
 
-    function renderBreedAtrributes {
+    function renderBreedAtrributes() {
 
     }
 
