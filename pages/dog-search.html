@@ -13,27 +13,50 @@
     <title>Search</title>
 </head>
 <body>
-    <header>Logo</header>
-    <nav>
-      <ul>
-        <li><a href="pages/dog-search.html">Home</a></li>
-        <li><a href=".pages/dog-breeds.html">Breed Info</a></li>
-        <li><a href="pages/adoptable.html">Adopt</a></li>
-      </ul>
-    </nav>
+  <header>
+    <nav class="navbar navbar-expand-md h-100" id="nav">
+      <div class="container-fluid bg-white">
+        <a class="navbar-brand d-flex flex-row align-content-center" href="../index.html" width="30" height="24" class="d-inline-block align-text-top" data-bs-target="#navbarSupportedContent">
+          <img id="favicon" src="../assets/images/pupper-picker-logo.png" alt="Pupper Picker">
+          <h1 class="org-title">Pupper Picker</h1>
+        </a>
 
-    <section> <!-- Added for filters -->
-      <div class="row mt-2">
-        <div class="col-12 mb-3 col-md-6">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2">
+            <li class="nav-item">
+              <a class="nav-link" href="dog-breeds.html">Breed Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dog-search.html">Search</a>
+            </li>
+          </ul>
+      </div>
+    </nav>
+  </header>
+
+    <section class="mb-4"> <!-- Added for filters -->
+      <div class="d-flex flex-row justify-content-end align-content-center bg-light px-5 py-4">
+        <div class="">
             <select class="form-select" id="filterByAge" onchange="searchFilter()">
-                <option value="" selected>Filter by Age</option>
+                <option value="none" selected>Filter by Age</option>
                 <option value="baby">Baby</option>
                 <option value="young">Young</option>
                 <option value="adult">Adult</option>
                 <option value="senior">Senior</option>
             </select>
         </div>
-        <div class="col-12 col-md-6 mb-3">
+        <div class="pl-3">
+          <select class="form-select" id="filterByGender" onchange="searchFilter()">
+              <option value="none" selected>Filter by Gender</option>
+              <option value="baby">Male</option>
+              <option value="young">Female</option>
+          </select>
+      </div>
+        <div class="pl-3">
             <input type="text" class="form-control" placeholder="Search cards" aria-label="Search cards" onkeyup="searchFilter()">
     
         </div>
@@ -67,8 +90,8 @@
       </ul>
     </nav>    
 
-    <footer>
-
+    <footer class="section d-flex flex-column justify-content-center align-items-center bg-dark text-white">
+      <p>Copyright 2023 | Pupper Picker Inc.</p>
     </footer>
 
   <script src="../assets/js/dog-search.js"></script>
