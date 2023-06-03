@@ -48,6 +48,10 @@ footer {
     height: 8vh !important;
 }
 
+img {
+  object-fit: contain;
+}
+
 footer p {
     margin: 0;
 }
