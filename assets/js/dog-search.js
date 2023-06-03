@@ -33,12 +33,15 @@ $(function() {
           }
           for (var i = 0; i < dataArray.animals.length; i++ ) {
 
-            nameEl[i].innerText = dataArray.animals[i].name; // appends the data to the cards. 
-            ageEl[i].innerText = dataArray.animals[i].age +" | "+ dataArray.animals[i].breeds.primary;
+            
+            if (isNaN(dataArray.animals[i].name)) {
+              nameEl[i].innerText = dataArray.animals[i].name;
+              ageEl[i].innerText = dataArray.animals[i].age +" | "+ dataArray.animals[i].breeds.primary;
             aboutEl[i].innerText = dataArray.animals[i].description;
             if (dataArray.animals[i].photos.length !== 0) {
               imgEl[i].src=dataArray.animals[i].photos[0].medium;
-            }
+            }}// appends the data to the cards. 
+            
             btnEl[i].setAttribute("id", dataArray.animals[i].id); // calls button with the id, which directs to adopt dogs.
           }
           document.getElementById("card-container").lastElementChild.setAttribute("class", "d-none"); // removes the last child template 
