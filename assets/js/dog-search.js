@@ -32,14 +32,20 @@ $(function() {
             document.getElementById("card-container").appendChild(clone); // used for creating multiple cards and filling the card container
           }
           for (var i = 0; i < dataArray.animals.length; i++ ) {
-
-            
-            if (isNaN(dataArray.animals[i].name)) {
+            if (isNaN(dataArray.animals[i].name)) { //removes numerical names
               nameEl[i].innerText = dataArray.animals[i].name;
               ageEl[i].innerText = dataArray.animals[i].age +" | "+ dataArray.animals[i].breeds.primary;
-            aboutEl[i].innerText = dataArray.animals[i].description;
+            
+            if(dataArray.animals[i].description !== null) { //removes descriptions that have special characters
+              let desc = dataArray.animals[i].description;
+              let filterDesc = desc.match(/[abcdefghijklmnopqrstuvwxyz.,'"!?$@() ]/gi); 
+              let newDescription = filterDesc.join("");
+              aboutEl[i].innerText = newDescription;
+            }
             if (dataArray.animals[i].photos.length !== 0) {
               imgEl[i].src=dataArray.animals[i].photos[0].medium;
+            
+
             }}// appends the data to the cards. 
             
             btnEl[i].setAttribute("id", dataArray.animals[i].id); // calls button with the id, which directs to adopt dogs.
@@ -51,6 +57,6 @@ $(function() {
 });
 function toPageAdopt(element){
   console.log(element);
-  localStorage.setItem("saved-id", element.getAttribute("id")); // based on id, sends to new page.
+  localStorage.setItem("saved-id", element.getAttribute("id")); // based on dog-id, sends to new page.
   window.location.replace("../pages/adoptable.html");
 }
