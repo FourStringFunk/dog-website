@@ -14,14 +14,12 @@
     --alt-text: #5a5a5a;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Lobster", serif;
+    font-family: 'Lobster', serif;
 }
 
 div, ul, ol, li, p, a, button {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Helvetica', sans-serif;
 }
 
 h3 {
