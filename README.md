@@ -36,10 +36,31 @@ What I learned is that I need a better system for debugging. Although console lo
 
 ## USAGE
 1. To use, go to live website where you will be directed to the main page. 
+
+![Homepage](/assets/images/pupper-picker-home-page.png)
+
 2. Select the first button or breed info in top right corner to research a dog and view it's stats.
-3. After doing research, go to second button in home page or select search in top right.
+
+![Search Breed button](/assets/images/pupper-picker-search-breeds-button.png)
+
+![Navigation](/assets/images/pupper-picker-navigation.png)
+
+![Stats](/assets/images/pupper-picker-stats.png)
+
+3. After doing research, go to second button on home page or select search in top right.
+
+![Adoptable Button](/assets/images/pupper-picker-adoptable-button.png)
+
+![Navigation](/assets/images/pupper-picker-navigation.png)
+
 4. After looking at the available dogs for adoption, select "Learn more" to get more information about the dog.
+
+![Card](/assets/images/pupper-picker-card.png)
+
 5. You be displayed more information about the dog as well as contact information of the organization currently caring for the dog. 
+
+![Contact Organization](/assets/images/pupper-picker-contact.png)
+
 6. Once you are ready, contact the organization to initiate the adoption process.
 
 ### GITHUB REPOSITORY
