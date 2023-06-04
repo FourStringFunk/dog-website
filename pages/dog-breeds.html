@@ -47,6 +47,7 @@
 
   <section class="breedSelectSection section d-flex flex-column justify-content-center align-items-center bg-light p-5" id="breedSelectSection"> <!-- DOG BREED SELECTION -->
     <h2>Select Your Breed</h2>
+    <p>Click on a breed name from the list below and scroll down the page to view more information about it.</p>
     <div class="w-90">
         <ul class="d-flex flex-wrap justify-content-center align-content-center" id="breedSelection">
         </ul>
@@ -55,18 +56,45 @@
 
   <section class="d-flex flex-column justify-content-center align-items-center p-5" id="breedInfoSection"> <!-- DOG STATS -->
     <h2 id="breedName">Breed Name</h2>
-    <p class="w-75" id="breedDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <p class="w-75" id="breedDescription">The following stats will give you a general overview of the breed you have selected, focusing specifically on lifespan and body and personality characteristics.</p>
 
-    <div class="card" style="width: 18rem;">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" id="minL">Minimum Lifespan</li>
-        <li class="list-group-item" id="maxL">Maximum Lifespan</li>
-        <li class="list-group-item" id="shedding">Shedding</li>
-        <li class="list-group-item" id="barking">Barking</li>
-        <li class="list-group-item" id="energy">Energy</li>
-        <li class="list-group-item" id="protectiveness">Protectiveness</li>
-        <li class="list-group-item" id="trainability">Trainability</li>
-      </ul>
+    <div class="d-flex flex-wrap justify-content-center align-content-center">
+      <div class="card mx-3 mb-3" style="width: 15rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="header"><strong>Lifespan</strong></li>
+          <li class="list-group-item" id="minL">Minimum Lifespan</li>
+          <li class="list-group-item" id="maxL">Maximum Lifespan</li>
+        </ul>
+      </div>
+
+      <div class="card mx-3 mb-3" style="width: 15rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="header"><strong>Female</strong></li>
+          <li class="list-group-item" id="minHF">Min Height</li>
+          <li class="list-group-item" id="maxHF">Max Height</li>
+          <li class="list-group-item" id="minWF">Min Weight</li>
+          <li class="list-group-item" id="maxWF">Max Weight</li>
+      </div>
+
+      <div class="card mx-3 mb-3" style="width: 15rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="header"><strong>Male</strong></li>
+          <li class="list-group-item" id="minHM">Min Height</li>
+          <li class="list-group-item" id="maxHM">Max Height</li>
+          <li class="list-group-item" id="minWM">Min Weight</li>
+          <li class="list-group-item" id="maxWM">Max Weight</li>
+      </div>
+
+      <div class="card mx-3 mb-3" style="width: 15rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="header"><strong>Breed Traits</strong></li>
+          <li class="list-group-item" id="shedding">Shedding</li>
+          <li class="list-group-item" id="barking">Barking</li>
+          <li class="list-group-item" id="energy">Energy</li>
+          <li class="list-group-item" id="protectiveness">Protectiveness</li>
+          <li class="list-group-item" id="trainability">Trainability</li>
+        </ul>
+      </div>
     </div>
 
     <div class="d-flex flex-column justify-content-center align-items-center mt-5">

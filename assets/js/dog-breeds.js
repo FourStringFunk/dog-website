@@ -1,13 +1,22 @@
 const apiKEY = "5Ng5KCn+rvjkpNagvsh0Cg==iqEQFjzT9ajCB9np";
 const request = "https://api.api-ninjas.com/v1/dogs?shedding=3&barking=3&energy=3";
-var breedsUrl = "https://dogapi.dog/api/v2/breeds";
+var factURL = "https://dogapi.dog/api/v2/facts";
 
 // Section Elements
 var breedList = document.getElementById('breedSelection');
 var breedInfoSection = document.getElementById('d-none');
 var breedFacts = document.getElementById('breedDescription');
+const factEl = document.getElementById('fact');
 
 // STAT Elements
+var minHF = document.getElementById('minHF');
+var maxHF = document.getElementById('maxHF');
+var minWF = document.getElementById('minWF');
+var maxWF = document.getElementById('maxWF');
+var minHM = document.getElementById('minHM');
+var maxHM = document.getElementById('maxHM');
+var minWM = document.getElementById('minWM');
+var maxWM = document.getElementById('maxWM');
 var breedName = document.getElementById('breedName');
 var minLife = document.getElementById('minL');
 var maxLife = document.getElementById('maxL');
@@ -60,6 +69,14 @@ var statArray;
             breedName.textContent = data[i].name;
             minLife.textContent = "Max Life Expectancy: " + data[i].min_life_expectancy + " years";
             maxLife.textContent = "Minimum Life Expectancy: " + data[i].max_life_expectancy + " years";
+            minHF.textContent = "Min Height: " + data[i].min_height_female + " inches";
+            maxHF.textContent = "Max Height: " + data[i].max_height_female + " inches";
+            minWF.textContent = "Min Weight: " + data[i].min_weight_female + " lbs";
+            maxWF.textContent = "Max Weight: " + data[i].max_weight_female + " lbs";
+            minHM.textContent = "Mind Height: " + data[i].min_height_male + " inches"; 
+            maxHM.textContent = "Max Height: " + data[i].max_height_male + " inches";
+            minWM.textContent = "Min Weight: " + data[i].min_weight_male + " lbs";
+            maxWM.textContent = "Max Weight: " + data[i].max_weight_male + " lbs";
             shedding.textContent = "Shedding: " + data[i].shedding;
             barking.textContent = "Barking: " + data[i].barking;
             energy.textContent = "Energy: " + data[i].energy;
@@ -70,39 +87,10 @@ var statArray;
       } 
   });
 
-  fetch(breedsUrl)
+  fetch(factURL)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
-    factArray = data;
-    console.log(factArray);
-  })
-
-fetch(request, {
-  method: 'GET',
-  headers: {
-    'X-Api-Key': apiKEY,
-  }
-})
-.then(function (res){
-  return res.json();
-})
-.then(function(d) {
-  console.log(d);
-  statArray = d;
-  factArray2 = factArray;
-  console.log(factArray2);
-
-  for (var i = 0; statArray.length; i++) {
-    console.log('you are here in this fuckery');
-    if ([i].name == data[i].attributes.name) {
-      console.log('fuckery round 2');
-      breedDescription.textContent = data[i].attributes.name;
-    } else {
-      breedDescription.textContent = "The following stats will give you a general overview of the breed you have selected, focusing specifically on lifespan and body and personality characteristics. "
-    }
-  }
-})
-
+    factEl.innerHTML = data.data[0].attributes.body;
+  });
