@@ -1,75 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href ="../assets/css/styles.css"/>
-    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-    <title>Search</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <style>
+     @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+   </style>
+   <link rel="stylesheet" type="text/css" href ="../assets/css/styles.css"/>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <title>Search</title>
 </head>
 <body>
-    <header>Logo</header>
-    <nav>
-      <ul>
-        <li><a href="pages/dog-search.html">Home</a></li>
-        <li><a href=".pages/dog-breeds.html">Breed Info</a></li>
-        <li><a href="pages/adoptable.html">Adopt</a></li>
-      </ul>
-    </nav>
+ <header>
+   <nav class="navbar navbar-expand-md h-100" id="nav">
+     <div class="container-fluid bg-white">
+       <a class="navbar-brand d-flex flex-row align-content-center" href="../index.html" width="30" height="24" class="d-inline-block align-text-top" data-bs-target="#navbarSupportedContent">
+         <img id="favicon" src="../assets/images/pupper-picker-logo.png" alt="Pupper Picker">
+         <h1 class="org-title">Pupper Picker</h1>
+       </a>
 
-    <section> <!-- Added for filters -->
-      <div class="row mt-2">
-        <div class="col-12 mb-3 col-md-6">
-            <select class="form-select" id="filterByAge" onchange="searchFilter()">
-                <option value="" selected>Filter by Age</option>
-                <option value="baby">Baby</option>
-                <option value="young">Young</option>
-                <option value="adult">Adult</option>
-                <option value="senior">Senior</option>
-            </select>
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <input type="text" class="form-control" placeholder="Search cards" aria-label="Search cards" onkeyup="searchFilter()">
-    
-        </div>
-    </div>
-    </section>
 
-    <div id="card-container" class="d-flex flex-wrap justify-content-center align-content-center">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img bg-secondary object-fit-fill border rounded" width="300px" height="350px" src="../assets/images/no-photos.jpg">
-            <div class="card-body">
-                <h3 class="dogname">Dog's name</h5>
-                <h5 class="ageBreeds">Age | Breed</h5>
-                <p class="about"></p>
-                <a href="#" class="btn btn-primary" onclick="toPageAdopt(this)">Learn More</a>
-            </div>
-        </div>
-    </div>
-    <nav aria-label="Search Results pages">
-      <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-          <span class="page-link">Previous</span>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li id="page2" class="page-item active" aria-current="page">
-          <span class="page-link">2</span>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#">Next</a>
-        </li>
-      </ul>
-    </nav>    
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
 
-    <footer>
 
-    </footer>
+       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+         <ul class="navbar-nav mb-2">
+           <li class="nav-item">
+             <a class="nav-link" href="dog-breeds.html">Breed Info</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="dog-search.html">Search</a>
+           </li>
+         </ul>
+     </div>
+   </nav>
+ </header>
 
-  <script src="../assets/js/dog-search.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+   <section class="mb-4"> <!-- Added for filters -->
+     <div class="d-flex flex-row justify-content-end align-content-center bg-light px-5 py-4">
+       <div class="">
+           <select class="form-select" id="age" onchange="searchFilter()">
+               <option value="none" selected>Filter by Age</option>
+               <option value="baby">Baby</option>
+               <option value="young">Young</option>
+               <option value="adult">Adult</option>
+               <option value="senior">Senior</option>
+           </select>
+       </div>
+       <div class="pl-3">
+         <select class="form-select" id="gender" onchange="searchFilter()">
+             <option value="none" selected>Filter by Gender</option>
+             <option value="male">Male</option>
+             <option value="female">Female</option>
+         </select>
+     </div>
+       <div class="pl-3">
+           <input type="text" class="form-control" placeholder="Search cards" aria-label="Search cards" onkeyup="searchFilter()">
+       </div>
+   </div>
+   </section>
+
+
+   <div id="card-container" class="d-flex flex-wrap justify-content-center align-content-center">
+       <div class="card" style="width: 18rem;">
+           <img class="card-img bg-secondary object-fit-fill border rounded" width="300px" height="350px" src="../assets/images/no-photos.jpg">
+           <div class="card-body">
+               <h3 class="dogname">Dog's name</h5>
+               <h5 class="ageBreeds">Age | Breed</h5>
+               <p class="about">No description available.</p>
+               <a href="#" class="btn btn-primary" onclick="toPageAdopt(this)">Learn More</a>
+           </div>
+       </div>
+   </div>
+   <nav aria-label="Search Results pages">
+     <ul class="pagination justify-content-center">
+       <li class="page-item">
+         <a class="page-link">Previous</a>
+       </li>
+       <li class="page-item">
+         <a class="page-link page-number">1</a>
+       </li>
+       <li class="page-item">
+         <a class="page-link page-number">2</a>
+       </li>
+       <li class="page-item">
+         <a class="page-link page-number">3</a>
+       </li>
+       <li class="page-item">
+         <a class="page-link">Next</a>
+       </li>
+     </ul>
+   </nav>   
+
+
+   <footer class="section d-flex flex-column justify-content-center align-items-center bg-dark text-white">
+     <p>Copyright 2023 | Pupper Picker Inc.</p>
+   </footer>
+
+
+ <script src="../assets/js/dog-search.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
