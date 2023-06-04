@@ -9,6 +9,14 @@ $(function() {
 
   const node = document.getElementById("card-container").lastElementChild;
   
+  var page = 1
+  var page2El = document.getElementById("page2");
+  page2El.addEventListener("click", changePage)
+  function changePage(){
+    page++
+    console.log("page number", page);
+  }
+
 
   fetch(url)
     .then(function(response) {
