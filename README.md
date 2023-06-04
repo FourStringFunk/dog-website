@@ -9,6 +9,9 @@ The website should start getting the user to think about or start the adoption p
 ### Javier's Learning
 What I learned is that I need a better system for debugging. Although console logging and checking the web console is helpful, I need a better tool or method for a bird's eye view for what is going on. I learned what a header is when requesting information via API calls. My favorite thing I learned is that you can clone a section of html using cloneNode. 
 
+### Chris's Learning
+I learned how to call data from multiple APIs and append the data to various page sections, both on page load and on page click. This was a good lessons in creating responsive design with bootstrap, laying out information, and working with github to resolve merge conflicts as well.
+
 ### USER STORY
 - **AS AN** Aspiring/Current dog owner,
 
@@ -17,10 +20,26 @@ What I learned is that I need a better system for debugging. Although console lo
 - **SO THAT** I am fully informed before making a big decision. 
 
 ### ACCESSIBILITY CRITERIA
-**GIVEN** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+**GIVEN** I am a prospective dog owner,
 
-- **WHEN** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    - **THEN** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+- **WHEN** I visit Pupper Picker Home, 
+    - **THEN** I want to be able to easily access breed information and search adoptable pets.
+    - **THEN** Images and dog facts should automatically populate from an API
+    - **THEN** The site should be a responsive design formatted for multiple device types.
+
+- **WHEN** I visit Pupper Picker Breeds, 
+    - **THEN** A list of breed buttons should populate from an API
+    - **THEN** When I click on the breed buttons, breed stats should automatically populate in the Lifespan, Gender, and Traits section below.
+    - **THEN** Fun facts about dogs should be populated from an API
+
+- **WHEN** I visit the Pupper Picker Search, 
+    - **THEN** I want to be able to see which dogs are available for adoption.
+    - **THEN** Images, dog names, age, breed type, and a short description should display for each adoptable dog.
+    - **THEN** I want to be able to click on a learn more button and be directed to a page with more information about the specific dog.
+
+- **WHEN** I click on an adoptable dog,
+    - **THEN** I want to be able to access specific, detailed information about that dog--including name, adoption status, age, gender, breed, hair type, a description, what type of environment the dog thrives in, notable adjectives, and health/training attributes--and who I can contact about the adoption process. 
+
 
 ## TECHNOLOGIES
 
@@ -67,6 +86,7 @@ What I learned is that I need a better system for debugging. Although console lo
 https://github.com/FourStringFunk/dog-website 
 
 ### LIVE SITE
+https://fourstringfunk.github.io/dog-website/
 
 ### CREDITS
 - Cloning a Node: https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode 
@@ -77,7 +97,7 @@ https://github.com/FourStringFunk/dog-website
 
 MIT License
 
-Copyright (c) 2023 Chris Harris
+Copyright (c) 2023 Chris Harris, Ren Rojas, and Javy B
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
