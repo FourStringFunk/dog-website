@@ -41,4 +41,9 @@ fetch(request, {
   imgs[1].setAttribute("alt", data[random2].name);
 })
 
-  
+function widthLog() {
+  var width = window.innerWidth;
+  console.log(width);
+}
+
+widthLog();
