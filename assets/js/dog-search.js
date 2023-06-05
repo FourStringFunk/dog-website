@@ -61,13 +61,15 @@ function generateCards(p) {
  }
 
 
-
+//fetch to get token to use PetFinder API
  fetch(url)
    .then(function(response) {
      return response.json();
    })
    .then(function(data) {
      let petUrl = `https://api.petfinder.com/v2/animals?type=dog&page=${p}` + finalQuery;
+    
+     //fetch to get data from PetFrinder API
      fetch(petUrl, {
        headers: {
          Authorization: ` Bearer ${data.access_token}`}
@@ -82,31 +84,40 @@ function generateCards(p) {
            document.getElementById("card-container").appendChild(clone); // used for creating multiple cards and filling the card container
          }
 
+         //-------------------appends specific data to cards---------------------
          var imgEl = document.getElementsByClassName("card-img");
          var nameEl = document.getElementsByClassName("dogname");
          var ageEl = document.getElementsByClassName("ageBreeds");
          var aboutEl = document.getElementsByClassName("about");
          var btnEl = document.getElementsByClassName("learn-more");
 
-         //// appends the data to the cards.
          for (let i = 0; i < d.animals.length; i++ ) {
-           if (isNaN(d.animals[i].name)) { //removes numerical names
+
+          //--removes dog names that are numerical
+           if (isNaN(d.animals[i].name)) {
              nameEl[i].innerText = d.animals[i].name;
              ageEl[i].innerText = d.animals[i].age +" | "+ d.animals[i].breeds.primary;
-           if(d.animals[i].description !== null) { //removes descriptions that have special characters
+           if(d.animals[i].description !== null) { 
+            
+            //--removes descriptions that have special characters
              let desc = d.animals[i].description;
              let filterDesc = desc.match(/[abcdefghijklmnopqrstuvwxyz.,'"!?$@() ]/gi);
              let newDescription = filterDesc.join("");
              aboutEl[i].innerText = newDescription;
            }
+          
            if (d.animals[i].photos.length !== 0) {
              imgEl[i].src=d.animals[i].photos[0].medium;
            }}
-
-           btnEl[i].setAttribute("id", d.animals[i].id); // calls button with the id, which directs to adopt dogs.
+          
+           //calls button with the id of PetFinder API
+           btnEl[i].setAttribute("id", d.animals[i].id);
          }
+         //adds loading image while page loads
          loadingImg.setAttribute("class", "d-none");
-         document.getElementById("card-container").lastElementChild.setAttribute("class", "d-none"); // removes the last child template
+
+         // removes the last child template
+         document.getElementById("card-container").lastElementChild.setAttribute("class", "d-none"); 
        })
   });
   updatePagination();
@@ -118,7 +129,7 @@ function toPageAdopt(element){
  window.location.replace("../pages/adoptable.html");
 }
 
-
+//---------------Pagination to navigate between pages
 function updatePagination() {
  var pageNumbers = document.getElementsByClassName("page-number");
  if(page >= 2 && page <= maxPages - 2) {
