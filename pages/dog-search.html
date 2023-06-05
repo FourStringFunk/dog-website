@@ -59,8 +59,17 @@
              <option value="female">Female</option>
          </select>
      </div>
+     <div class="pl-3">
+      <select class="form-select" id="size">
+          <option value="none" selected>Filter by Size</option>
+               <option value="small">Small</option>
+               <option value="medium">Medium</option>
+               <option value="large">Large</option>
+               <option value="xl">Extra Large</option>
+      </select>
+    </div>
        <div class="pl-3">
-           <input type="text" class="form-control" placeholder="Search cards" aria-label="Search cards" onkeyup="searchFilter()">
+           <button type="button" class="btn btn-light text-white" id="filterBtn">Filter</button>
        </div>
    </div>
    </section>
