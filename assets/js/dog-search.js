@@ -4,16 +4,13 @@ var page = 1;
 var maxPages;
 var loadingImg = document.getElementById("loading-img");
 
-let finalQuery = qItems.join("");
 
-const node = document.getElementById("card-container").lastElementChild;
-
-
+// function to handle the selection and re-display of cards based on on age, gender, and size filter selections
 $(function() {
  var pages = document.getElementsByClassName("page-link");
  var filterBtn = document.getElementById("filterBtn"); 
 
-filterBtn.onclick = filter; 
+filterBtn.onclick = filter; // filters cards based onclick selection of filter dropdown items
 
  Array.from(pages).forEach(function (element) {
    element.addEventListener("click", changePage);
@@ -25,7 +22,9 @@ function filter() {
   generateCards(page);
 }
 
+
 function changePage(event){
+
  if(event.target.innerText === "Next"){
    if(page !== maxPages) {
      page++;
@@ -59,7 +58,10 @@ function generateCards(p) {
      qItems.push(qUrl);
    }
  }
+ let finalQuery = qItems.join("");
+ console.log(finalQuery);
 
+ const node = document.getElementById("card-container").lastElementChild;
 
 //fetch to get token to use PetFinder API
  fetch(url)
@@ -68,8 +70,8 @@ function generateCards(p) {
    })
    .then(function(data) {
      let petUrl = `https://api.petfinder.com/v2/animals?type=dog&page=${p}` + finalQuery;
-    
-     //fetch to get data from PetFrinder API
+
+      //fetch to get data from PetFrinder API
      fetch(petUrl, {
        headers: {
          Authorization: ` Bearer ${data.access_token}`}
@@ -83,40 +85,38 @@ function generateCards(p) {
            var clone = node.cloneNode(true);
            document.getElementById("card-container").appendChild(clone); // used for creating multiple cards and filling the card container
          }
-
-         //-------------------appends specific data to cards---------------------
+        //--------- appends specific data to the cards---------------
          var imgEl = document.getElementsByClassName("card-img");
          var nameEl = document.getElementsByClassName("dogname");
          var ageEl = document.getElementsByClassName("ageBreeds");
          var aboutEl = document.getElementsByClassName("about");
          var btnEl = document.getElementsByClassName("learn-more");
-
+         
          for (let i = 0; i < d.animals.length; i++ ) {
 
           //--removes dog names that are numerical
-           if (isNaN(d.animals[i].name)) {
+           if (isNaN(d.animals[i].name)) { 
              nameEl[i].innerText = d.animals[i].name;
              ageEl[i].innerText = d.animals[i].age +" | "+ d.animals[i].breeds.primary;
            if(d.animals[i].description !== null) { 
-            
+
             //--removes descriptions that have special characters
              let desc = d.animals[i].description;
              let filterDesc = desc.match(/[abcdefghijklmnopqrstuvwxyz.,'"!?$@() ]/gi);
              let newDescription = filterDesc.join("");
              aboutEl[i].innerText = newDescription;
            }
-          
            if (d.animals[i].photos.length !== 0) {
              imgEl[i].src=d.animals[i].photos[0].medium;
            }}
-          
+
            //calls button with the id of PetFinder API
            btnEl[i].setAttribute("id", d.animals[i].id);
          }
          //adds loading image while page loads
          loadingImg.setAttribute("class", "d-none");
 
-         // removes the last child template
+         // removes the last child card template
          document.getElementById("card-container").lastElementChild.setAttribute("class", "d-none"); 
        })
   });
@@ -125,7 +125,7 @@ function generateCards(p) {
 }
 function toPageAdopt(element){
  console.log(element);
- localStorage.setItem("saved-id", element.getAttribute("id")); // based on dog-id, sends to new page.
+ localStorage.setItem("saved-id", element.getAttribute("id")); // based on dog-id, sends to adoptable.html page.
  window.location.replace("../pages/adoptable.html");
 }
 
