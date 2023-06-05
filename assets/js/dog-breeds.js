@@ -1,3 +1,4 @@
+// API Call Information
 const apiKEY = "5Ng5KCn+rvjkpNagvsh0Cg==iqEQFjzT9ajCB9np";
 const request = "https://api.api-ninjas.com/v1/dogs?shedding=3&barking=3&energy=3";
 var factURL = "https://dogapi.dog/api/v2/facts";
@@ -87,6 +88,7 @@ var statArray;
       } 
   });
 
+  // Returns random fact on load and appends to fact section
   fetch(factURL)
   .then(function (response) {
     return response.json();

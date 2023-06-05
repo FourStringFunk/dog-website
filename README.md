@@ -63,11 +63,15 @@ What I learned is how to customize cards based on the information provided by an
 
 2. Select the first button or breed info in top right corner to research a dog and view it's stats.
 
+![Responsive Homepage](/assets/images/responsive_design.png)
+
 ![Search Breed button](/assets/images/pupper-picker-search-breeds-button.png)
 
 ![Navigation](/assets/images/pupper-picker-navigation.png)
 
 ![Stats](/assets/images/pupper-picker-stats.png)
+
+![Responsive Stats](/assets/images/response_design_traits.png)
 
 3. After doing research, go to second button on home page or select search in top right.
 
@@ -91,6 +95,9 @@ https://github.com/FourStringFunk/dog-website
 ### LIVE SITE
 https://fourstringfunk.github.io/dog-website/
 
+### WIREFRAME
+https://miro.com/app/board/uXjVMGaD9ww=/?share_link_id=446916244852
+
 ### CREDITS
 - Cloning a Node: https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode 
 
@@ -100,7 +107,7 @@ https://fourstringfunk.github.io/dog-website/
 
 MIT License
 
-Copyright (c) 2023 Chris Harris, Ren Rojas, and Javy B
+Copyright (c) 2023 Chris Harris, Ren Rojas, and Javier Baylon
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -123,5 +130,5 @@ SOFTWARE.
 
 ### CONTRIBUTORS
 - Ren Rojas
-- Javy B
+- Javier Baylon
 - Chris Harris

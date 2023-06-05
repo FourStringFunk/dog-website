@@ -54,10 +54,12 @@
     </div>
   </section> 
 
+  <!-- Breed selection list auto-populated by breed name from api.api-ninjas.com/v1/dogs  -->
   <section class="d-flex flex-column justify-content-center align-items-center p-5" id="breedInfoSection"> <!-- DOG STATS -->
     <h2 id="breedName">Breed Name</h2>
     <p class="w-75" id="breedDescription">The following stats will give you a general overview of the breed you have selected, focusing specifically on lifespan and body and personality characteristics.</p>
-
+    
+    <!-- Begin section for dog stat. Data populated from api.api-ninjas.com/v1/dogs -->
     <div class="d-flex flex-wrap justify-content-center align-content-center">
       <div class="card mx-3 mb-3" style="width: 15rem;">
         <ul class="list-group list-group-flush">
@@ -103,6 +105,7 @@
     </div>
     </section>
 
+    <!-- Variable dog fact auto-populated from dogapi.dog/api/v2 -->
   <section class="section d-flex flex-column justify-content-center align-items-center bg-light p-5"> <!-- DOG FACTS -->
     <h3>Fun Facts About Dogs</h3>
     <p id="fact"></p>
