@@ -4,11 +4,14 @@ var page = 1;
 var maxPages;
 var loadingImg = document.getElementById("loading-img");
 
+let finalQuery = qItems.join("");
+
+const node = document.getElementById("card-container").lastElementChild;
+
 
 $(function() {
  var pages = document.getElementsByClassName("page-link");
  var filterBtn = document.getElementById("filterBtn"); 
- console.log("Pages: " + pages);
 
 filterBtn.onclick = filter; 
 
@@ -23,7 +26,6 @@ function filter() {
 }
 
 function changePage(event){
-
  if(event.target.innerText === "Next"){
    if(page !== maxPages) {
      page++;
@@ -57,12 +59,7 @@ function generateCards(p) {
      qItems.push(qUrl);
    }
  }
- let finalQuery = qItems.join("");
- console.log(finalQuery);
 
-
- console.log(p);
- const node = document.getElementById("card-container").lastElementChild;
 
 
  fetch(url)
@@ -70,9 +67,7 @@ function generateCards(p) {
      return response.json();
    })
    .then(function(data) {
-     console.log(data);
      let petUrl = `https://api.petfinder.com/v2/animals?type=dog&page=${p}` + finalQuery;
-     console.log(petUrl);
      fetch(petUrl, {
        headers: {
          Authorization: ` Bearer ${data.access_token}`}
@@ -81,7 +76,6 @@ function generateCards(p) {
          return res.json();
        })
        .then(function(d) {
-         console.log(d);
          maxPages = d.pagination.total_pages;
          for (var i = 0; i < d.animals.length; i++ ) {
            var clone = node.cloneNode(true);
@@ -93,7 +87,7 @@ function generateCards(p) {
          var ageEl = document.getElementsByClassName("ageBreeds");
          var aboutEl = document.getElementsByClassName("about");
          var btnEl = document.getElementsByClassName("learn-more");
-         console.log(btnEl.length);
+
          //// appends the data to the cards.
          for (let i = 0; i < d.animals.length; i++ ) {
            if (isNaN(d.animals[i].name)) { //removes numerical names
