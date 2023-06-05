@@ -1,8 +1,8 @@
 # Pupper picker
-A go to website for dog owners for tools, resources, and facts.
+A go to website for dog owners to adopt, other resources, and facts.
 
 ## PROJECT DESCRIPTION
-Being dog owners, our motivation is to encourage new dog owners or aspiring dog owners to adopt responsibly with all the information provided. Should the user already be a dog owner, to provide additional information and facts that they did not know already.
+Being dog owners, our motivation is to encourage new dog owners or aspiring dog owners to adopt responsibly with all the information provided. Should the user already be a dog owner, to provide additional information and facts that they did not know already about the breed they are looking to adopt.
 
 The website should start getting the user to think about or start the adoption process by providing information and directing them to the organization that is caring for the dog.
 
@@ -11,6 +11,9 @@ What I learned is that I need a better system for debugging. Although console lo
 
 ### Chris's Learning
 I learned how to call data from multiple APIs and append the data to various page sections, both on page load and on page click. This was a good lessons in creating responsive design with bootstrap, laying out information, and working with github to resolve merge conflicts as well.
+
+### Ren's Learning
+What I learned is how to customize cards based on the information provided by an API. Although most of the information was simple enough to append the data to the cards, we had to exclude certain data such as random special chsaracters that appeared in descriptions and numerical dog names. Using isNaN helped exclude dogs that had numbers as names while filtering by including certain characters helped exclude special characters. My favorite part of what I learned was when the cards got cloned enough to fill the page and to display all of the data received by the API call and seeing the page flooded with pupper pictures. 
 
 ### USER STORY
 - **AS AN** Aspiring/Current dog owner,
@@ -24,16 +27,16 @@ I learned how to call data from multiple APIs and append the data to various pag
 
 - **WHEN** I visit Pupper Picker Home, 
     - **THEN** I want to be able to easily access breed information and search adoptable pets.
-    - **THEN** Images and dog facts should automatically populate from an API
+    - **THEN** Images and dog facts should automatically populate from an API.
     - **THEN** The site should be a responsive design formatted for multiple device types.
 
 - **WHEN** I visit Pupper Picker Breeds, 
     - **THEN** A list of breed buttons should populate from an API
-    - **THEN** When I click on the breed buttons, breed stats should automatically populate in the Lifespan, Gender, and Traits section below.
+    - **THEN** When I click on the breed buttons, breed stats should automatically populate in the Lifespan, Gender, and Traits section at the bottom.
     - **THEN** Fun facts about dogs should be populated from an API
 
 - **WHEN** I visit the Pupper Picker Search, 
-    - **THEN** I want to be able to see which dogs are available for adoption.
+    - **THEN** I want to be able to see which dogs are available for adoption either already on the page or by selecting on the search filter at the top of the page which gives options to search by Age, Gender and Size of the dog.
     - **THEN** Images, dog names, age, breed type, and a short description should display for each adoptable dog.
     - **THEN** I want to be able to click on a learn more button and be directed to a page with more information about the specific dog.
 
@@ -56,7 +59,7 @@ I learned how to call data from multiple APIs and append the data to various pag
 ## USAGE
 1. To use, go to live website where you will be directed to the main page. 
 
-![Homepage](/assets/images/pupper-picker-home-page.png)
+![Video](/assets/images/pupper-picker.mp4)
 
 2. Select the first button or breed info in top right corner to research a dog and view it's stats.
 
