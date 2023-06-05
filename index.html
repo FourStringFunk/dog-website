@@ -21,9 +21,9 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-md h-100 bg-light" id="nav">
+    <nav class="navbar navbar-expand-md h-100" id="nav">
       <div class="container-fluid bg-white">
-        <a class="navbar-brand d-flex flex-row align-content-center" href="index.html" width="30" height="24" class="d-inline-block align-text-top" data-bs-target="#navbarSupportedContent">
+        <a class="navbar-brand d-flex flex-row align-items-center" href="index.html" width="30" height="24" class="d-inline-block align-text-top" data-bs-target="#navbarSupportedContent">
           <img id="favicon" src="./assets/images/pupper-picker-logo.png" alt="Pupper Picker">
           <h1 class="org-title">Pupper Picker</h1>
         </a>
@@ -33,7 +33,7 @@
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-2">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
               <a class="nav-link" href="./pages/dog-breeds.html">Breed Info</a>
             </li>
@@ -45,34 +45,34 @@
     </nav>
   </header>
 
-  <section class="section d-flex flex-wrap justify-content-center align-items-center bg-light p-5">
-    <div class="d-flex flex-column justify-content-center align-items-center me-4">
+  <section class="section d-flex flex-wrap justify-content-center align-items-center bg-light pt-5 pb-5" id="heroSection">
+    <div class="d-flex justify-content-center me-4">
       <img src="" class="image-fluid img col-lg-8 ms-lg-5" alt="">
     </div>
     <div class="d-flex flex-column justify-content-center align-items-center mt-4">
-      <h3 class="text-center">Find your perfect dog by search our breeds.</h1>
+      <h3 class="text-center">Find your perfect dog by search our breeds.</h3>
       <a href="./pages/dog-breeds.html"><button type="button" class="btn btn-primary">Search Breeds</button></a>
     </div>
   </section>
 
-  <section class="section d-flex flex-column justify-content-center align-items-center p-5" >
+  <section class="section d-flex flex-column justify-content-center align-items-center p-5" id="factSection">
     <h3>Did you know?</h3>
     <p id="fact">
     </p>
   </section>
 
-  <section class="section d-flex flex-wrap justify-content-center align-items-center bg-light p-5" id="adoptYourDog">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <img src="" class="image-fluid img" alt="Mapas Blue Heeler being a cute puppy on his back." width="500" height="500">
-    </div>
-
-    <div class="d-flex flex-column justify-content-center align-items-center mb-5">
+  <section class="section d-flex flex-column-reverse flex-lg-row justify-content-around bg-light pt-5" id="adoptYourDog">
+    <div class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5 p-5" id="adoptHome">
       <h3>Adopt your dog</h3>
       <p class="text-center" id="adoptDescriptionHome">After you have searched the perfect pup for you, the next step is as simple as getting the contact information and 
         inquiring. No pet is too far as organizations can make transportation arrangements for you. Look for your furry friend 
         now!
       </p>
       <a href="./pages/dog-search.html"><button type="button" class="btn btn-primary">Adoptable Dogs</button></a>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <img src="" class="image-fluid img col-lg-8 ms-lg-5" alt="">
     </div>
   </section>
 

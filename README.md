@@ -59,7 +59,7 @@ What I learned is how to customize cards based on the information provided by an
 ## USAGE
 1. To use, go to live website where you will be directed to the main page. 
 
-![Video](/assets/images/pupper-picker.mp4)
+![Video](/assets/images/pupper-picker.GIF)
 
 2. Select the first button or breed info in top right corner to research a dog and view it's stats.
 

@@ -48,8 +48,8 @@ img {
 }
 
 #favicon {
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
     margin-right: 1.25vw;
 }
 
@@ -106,14 +106,18 @@ footer p {
 }
 
 /* SECTIONS */
-#adoptYourDog {
-    padding: 0 15vw 0 15vw !important;
-}
-
 .form-select {
     padding: 11px 6px;
     width: 174px;
     border-color: var(--alt-text);
     color: var(--alt-text);
     border-radius: 5px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media screen and (max-width: 480px) {
+    * {
+
+    };
 }
