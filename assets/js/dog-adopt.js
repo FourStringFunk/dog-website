@@ -25,6 +25,7 @@ let phone = document.getElementById("phone");
 let mapsUrl = document.getElementById("google-maps");
 let businessHours = document.getElementById("business-hours");
 let socialMedia = document.getElementById("social-media");
+let loadingImg = document.getElementById("loading-img");
 //---------------------------------------------------------------------------------------------------
 $(function() {
   var url = 'https://bootcamp-apiproxy.herokuapp.com/token/72b8b6de-0089-4257-a4b4-02d655ad67f6';
@@ -83,6 +84,7 @@ $(function() {
               setBusinessHours(r.organization.hours, businessHours);
               setSocialMedia(r.organization.social_media, socialMedia);
               //-----------------------------------------------------------------------------
+              loadingImg.setAttribute("class", "d-none");
             });
 
           // Display images sent with API request if any
@@ -137,8 +139,8 @@ $(function() {
 
 //------------Get and set for buttons----------------
 function setButtons(data, element) {
-  if(data)
-    element.setAttribute("class", "btn btn-primary");
+  if(!data)
+    element.setAttribute("class", "btn btn-primary bg-secondary");
 }
 //---------------------------------------------------
 

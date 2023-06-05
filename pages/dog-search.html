@@ -40,52 +40,55 @@
    </nav>
  </header>
 
-
-   <section class="mb-4"> <!-- Added for filters -->
-     <div class="d-flex flex-row justify-content-end align-content-center bg-light px-5 py-4">
-       <div class="">
-           <select class="form-select" id="age">
-               <option value="none" selected>Filter by Age</option>
-               <option value="baby">Baby</option>
-               <option value="young">Young</option>
-               <option value="adult">Adult</option>
-               <option value="senior">Senior</option>
-           </select>
-       </div>
-       <div class="pl-3">
-         <select class="form-select" id="gender">
-             <option value="none" selected>Filter by Gender</option>
-             <option value="male">Male</option>
-             <option value="female">Female</option>
-         </select>
-     </div>
-     <div class="pl-3">
-      <select class="form-select" id="size">
-          <option value="none" selected>Filter by Size</option>
-               <option value="small">Small</option>
-               <option value="medium">Medium</option>
-               <option value="large">Large</option>
-               <option value="xl">Extra Large</option>
-      </select>
+  <section class="mb-4"> <!-- Added for filters -->
+    <div class="d-flex flex-row justify-content-end align-content-center bg-light px-5 py-4">
+      <div class="">
+          <select class="form-select" id="age">
+              <option value="none" selected>Filter by Age</option>
+              <option value="baby">Baby</option>
+              <option value="young">Young</option>
+              <option value="adult">Adult</option>
+              <option value="senior">Senior</option>
+          </select>
+      </div>
+      <div class="pl-3">
+        <select class="form-select" id="gender">
+            <option value="none" selected>Filter by Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
     </div>
-       <div class="pl-3">
-           <button type="button" class="btn btn-light text-white" id="filterBtn">Filter</button>
-       </div>
+    <div class="pl-3">
+     <select class="form-select" id="size">
+         <option value="none" selected>Filter by Size</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="xl">Extra Large</option>
+     </select>
    </div>
-   </section>
+      <div class="pl-3">
+          <button type="button" class="btn btn-light text-white" id="filterBtn">Filter</button>
+      </div>
+  </div>
+  </section>
+
+  <div id="loading-img" style="text-align: center; margin-bottom: 1000px;">
+    <img src="../assets/images/loading.png" style="width: 50%; background-color: white;">
+  </div>
 
 
-   <div id="card-container" class="d-flex flex-wrap justify-content-center align-content-center">
-       <div class="card" style="width: 18rem;">
-           <img class="card-img bg-secondary object-fit-fill border rounded" width="300px" height="350px" src="../assets/images/no-photos.jpg">
-           <div class="card-body">
-               <h3 class="dogname">Dog's name</h5>
-               <h5 class="ageBreeds">Age | Breed</h5>
-               <p class="about">No description available.</p>
-               <a href="#" class="btn btn-primary" onclick="toPageAdopt(this)">Learn More</a>
-           </div>
-       </div>
-   </div>
+  <div id="card-container" class="d-flex flex-wrap justify-content-center align-content-center">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img bg-secondary object-fit-fill border rounded" width="300px" height="350px" src="../assets/images/no-photos.jpg">
+          <div class="card-body">
+              <h3 class="dogname">Dog's name</h5>
+              <h5 class="ageBreeds">Age | Breed</h5>
+              <p class="about">No description available.</p>
+              <a href="#" class="btn btn-primary learn-more" onclick="toPageAdopt(this)">Learn More</a>
+          </div>
+      </div>
+  </div>
    <nav aria-label="Search Results pages">
      <ul class="pagination justify-content-center">
        <li class="page-item">
