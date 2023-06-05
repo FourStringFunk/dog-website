@@ -2,6 +2,7 @@
 var url = 'https://bootcamp-apiproxy.herokuapp.com/token/72b8b6de-0089-4257-a4b4-02d655ad67f6';
 var page = 1;
 var maxPages;
+var loadingImg = document.getElementById("loading-img");
 
 
 $(function() {
@@ -61,12 +62,6 @@ function generateCards(p) {
 
 
  console.log(p);
- var dataArray;
- var imgEl = document.getElementsByClassName("card-img");
- var nameEl = document.getElementsByClassName("dogname");
- var ageEl = document.getElementsByClassName("ageBreeds");
- var aboutEl = document.getElementsByClassName("about");
- var btnEl = document.getElementsByClassName("btn");
  const node = document.getElementById("card-container").lastElementChild;
 
 
@@ -88,31 +83,40 @@ function generateCards(p) {
        .then(function(d) {
          console.log(d);
          maxPages = d.pagination.total_pages;
-         dataArray = d;
-         for (var i = 0; i < dataArray.animals.length; i++ ) {
+         for (var i = 0; i < d.animals.length; i++ ) {
            var clone = node.cloneNode(true);
            document.getElementById("card-container").appendChild(clone); // used for creating multiple cards and filling the card container
          }
+
+         var imgEl = document.getElementsByClassName("card-img");
+         var nameEl = document.getElementsByClassName("dogname");
+         var ageEl = document.getElementsByClassName("ageBreeds");
+         var aboutEl = document.getElementsByClassName("about");
+         var btnEl = document.getElementsByClassName("learn-more");
+         console.log(btnEl.length);
          //// appends the data to the cards.
-         for (var i = 0; i < dataArray.animals.length; i++ ) {
-           if (isNaN(dataArray.animals[i].name)) { //removes numerical names
-             nameEl[i].innerText = dataArray.animals[i].name;
-             ageEl[i].innerText = dataArray.animals[i].age +" | "+ dataArray.animals[i].breeds.primary;
-           if(dataArray.animals[i].description !== null) { //removes descriptions that have special characters
-             let desc = dataArray.animals[i].description;
+         for (let i = 0; i < d.animals.length; i++ ) {
+           if (isNaN(d.animals[i].name)) { //removes numerical names
+             nameEl[i].innerText = d.animals[i].name;
+             ageEl[i].innerText = d.animals[i].age +" | "+ d.animals[i].breeds.primary;
+           if(d.animals[i].description !== null) { //removes descriptions that have special characters
+             let desc = d.animals[i].description;
              let filterDesc = desc.match(/[abcdefghijklmnopqrstuvwxyz.,'"!?$@() ]/gi);
              let newDescription = filterDesc.join("");
              aboutEl[i].innerText = newDescription;
            }
-           if (dataArray.animals[i].photos.length !== 0) {
-             imgEl[i].src=dataArray.animals[i].photos[0].medium;
+           if (d.animals[i].photos.length !== 0) {
+             imgEl[i].src=d.animals[i].photos[0].medium;
            }}
-           btnEl[i].setAttribute("id", dataArray.animals[i].id); // calls button with the id, which directs to adopt dogs.
+
+           btnEl[i].setAttribute("id", d.animals[i].id); // calls button with the id, which directs to adopt dogs.
          }
+         loadingImg.setAttribute("class", "d-none");
          document.getElementById("card-container").lastElementChild.setAttribute("class", "d-none"); // removes the last child template
        })
   });
   updatePagination();
+
 }
 function toPageAdopt(element){
  console.log(element);
