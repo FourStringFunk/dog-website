@@ -6,17 +6,22 @@ var maxPages;
 
 $(function() {
  var pages = document.getElementsByClassName("page-link");
+ var filterBtn = document.getElementById("filterBtn"); 
  console.log("Pages: " + pages);
+
+filterBtn.onclick = filter; 
+
  Array.from(pages).forEach(function (element) {
    element.addEventListener("click", changePage);
  });
  generateCards(page);
 });
 
+function filter() { 
+  generateCards(page);
+}
 
 function changePage(event){
- // document.getElementById("page-item").style.pointerEvents = "none";
-
 
  if(event.target.innerText === "Next"){
    if(page !== maxPages) {
@@ -37,7 +42,6 @@ function changePage(event){
    }
  }
 }
-
 
 function generateCards(p) {
  let qParams = Array.from(document.getElementsByClassName("form-select"));
